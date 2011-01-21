@@ -53,7 +53,7 @@ section below for more info.
 
 ### Leveraging existing functionality
 
-Delightful doesn't try to re-invent wheels. Widgets depend heavily on
+Delightful doesn't try to re-invent the wheel. Widgets depend heavily on
 [Vicious](https://awesome.naquadah.org/wiki/Vicious) widget library.
 A few of the widgets just extend an existing Vicious widget by providing
 an icon and widget data display configuration for the Vicious widget
