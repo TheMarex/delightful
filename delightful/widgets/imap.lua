@@ -79,7 +79,7 @@
 -- theme.delightful_imap_mail_read   - icon shown when mail in a mailbox is read
 -- theme.delightful_imap_mail_unread - icon shown when unread mail in a mailbox
 -- theme.delightful_error            - icon shown when critical error has occurred
--- theme.delightful_monospace_font   - font for status text and notifications
+-- theme.monospace_font              - font for status text and notifications
 --
 -------------------------------------------------------------------------------
 

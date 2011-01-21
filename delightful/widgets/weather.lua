@@ -120,7 +120,7 @@ local p=print
 -- theme.delightful_weather_fog                         - icon shown when it's foggy or misty
 -- theme.delightful_not_found                           - icon shown when weather status is unknown
 -- theme.delightful_error                               - icon shown when critical error has occurred
--- theme.delightful_monospace_font                      - font for status text
+-- theme.monospace_font                                 - font for status text
 --
 -------------------------------------------------------------------------------
 
