@@ -6,7 +6,9 @@ window manager.
 Delightful home page is at
 <http://solitudo.net/software/awesome/delightful/>. Also Delightful page at
 [Awesome wiki](https://awesome.naquadah.org/wiki/) is available at
-<https://awesome.naquadah.org/wiki/Delightful>.
+<https://awesome.naquadah.org/wiki/Delightful>. Screenshots showing Delightful
+in action are available at <https://awesome.naquadah.org/wiki/Glossy_theme>
+and <https://awesome.naquadah.org/wiki/Darklooks_theme>.
 
 ## Why?
 
