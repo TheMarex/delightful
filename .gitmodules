@@ -1,0 +1,18 @@
+[submodule "submodules/mdwn2text"]
+	path = submodules/mdwn2text
+	url = git://scm.solitudo.net/mdwn2text.git
+[submodule "submodules/weatherlib"]
+	path = submodules/weatherlib
+	url = git://scm.solitudo.net/weatherlib.git
+[submodule "submodules/metar"]
+	path = submodules/metar
+	url = git://scm.solitudo.net/metar.git
+[submodule "submodules/awesome-freedesktop"]
+	path = submodules/awesome-freedesktop
+	url = https://github.com/terceiro/awesome-freedesktop.git
+[submodule "submodules/imap"]
+	path = submodules/imap
+	url = http://github.com/dmj/misc.git
+[submodule "submodules/vicious"]
+	path = submodules/vicious
+	url = http://git.sysphere.org/vicious
