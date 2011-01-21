@@ -53,8 +53,8 @@ Justifications
 
   Leveraging existing functionality
 
-   Delightful doesn't try to re-invent wheels. Widgets depend heavily on
-   [12]Vicious widget library. A few of the widgets just extend an
+   Delightful doesn't try to re-invent the wheel. Widgets depend heavily
+   on [12]Vicious widget library. A few of the widgets just extend an
    existing Vicious widget by providing an icon and widget data display
    configuration for the Vicious widget used under the hoods. Some of the
    widgets provide features not available in existing Vicious widgets by
