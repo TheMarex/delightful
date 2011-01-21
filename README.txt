@@ -5,12 +5,15 @@
    Delightful home page is at
    [2]http://solitudo.net/software/awesome/delightful/. Also Delightful
    page at [3]Awesome wiki is available at
-   [4]https://awesome.naquadah.org/wiki/Delightful.
+   [4]https://awesome.naquadah.org/wiki/Delightful. Screenshots showing
+   Delightful in action are available at
+   [5]https://awesome.naquadah.org/wiki/Glossy_theme and
+   [6]https://awesome.naquadah.org/wiki/Darklooks_theme.
 
 Why?
 
    Why another widget system for Awesome, you ask? We already have
-   [5]Vicious, [6]Wicked, [7]Obvious, and [8]many others.
+   [7]Vicious, [8]Wicked, [9]Obvious, and [10]many others.
 
 Justifications
 
@@ -24,7 +27,7 @@ Justifications
    try to add some "bling" to the widgets. Not un-needed "bling" but
    something useful. Many Delightful widgets provide a dynamically updated
    icon along with the widget text. The icon might indicate the sound
-   volume or battery level. Some of the widgets use [9]Naughty based
+   volume or battery level. Some of the widgets use [11]Naughty based
    pop-ups and notifications to provide useful, additional information
    that doesn't fit the Awesome wibox. Tooltips are used always when it
    makes sense.
@@ -51,7 +54,7 @@ Justifications
   Leveraging existing functionality
 
    Delightful doesn't try to re-invent wheels. Widgets depend heavily on
-   [10]Vicious widget library. A few of the widgets just extend an
+   [12]Vicious widget library. A few of the widgets just extend an
    existing Vicious widget by providing an icon and widget data display
    configuration for the Vicious widget used under the hoods. Some of the
    widgets provide features not available in existing Vicious widgets by
@@ -122,22 +125,22 @@ Weather widget
 
                                   Dependencies
 
-   All widgets except the Date and time widget require [11]Vicious. A
+   All widgets except the Date and time widget require [13]Vicious. A
    tested and found-to-be-working version of Vicious is provided in under
    the submodules/vicious directory of the Delightful Git tree. See the
    downloading and install sections below for more information about the
    bundled Vicious. Using your existing Vicious installation or manually
-   cloning the latest Vicious sources from the [12]Git tree will most
+   cloning the latest Vicious sources from the [14]Git tree will most
    likely work, too.
 
    All widgets except the Date and time widget require
-   [13]awesome-freedesktop for icon support. A tested and
+   [15]awesome-freedesktop for icon support. A tested and
    found-to-be-working version of awesome-freedesktop is provided in under
    the submodules/awesome-freedesktop directory of the Delightful Git
    tree. See the downloading and install sections below for more
    information about the bundled awesome-freedesktop. Using your existing
    awesome-freedesktop installation or manually cloning the latest
-   awesome-freedesktop sources from the [14]Git tree will most likely
+   awesome-freedesktop sources from the [16]Git tree will most likely
    work, too.
 
    All widgets except the Date and time widget can use icons. Using of
@@ -148,38 +151,38 @@ Weather widget
    CPU or Memory widgets and the package libgweather-common if you're
    planning to use the Weather widget.
 
-   IMAP widget requires [15]imap.lua. A tested and found-to-be-working
+   IMAP widget requires [17]imap.lua. A tested and found-to-be-working
    version of imap.lua is provided in under the submodules/imap directory
    of the Delightful Git tree. See the downloading and install sections
    below for more information about the bundled imap.lua. imap.lua
-   requires [16]LuaSocket and [17]LuaSec. On Debian/Ubuntu systems you can
+   requires [18]LuaSocket and [19]LuaSec. On Debian/Ubuntu systems you can
    install the packages liblua5.1-socket2 and liblua5.1-sec1 in order to
    get LuaSocket and LuaSec installed.
 
-   Weather widget requires [18]Lua weather library and [19]Lua METAR
+   Weather widget requires [20]Lua weather library and [21]Lua METAR
    parser. A tested and found-to-be-working versions of these modules are
    provided under the submodules/weatherlib and submodules/metar
    directories of the Delightful Git tree. See the downloading and install
    sections below for more information about these modules. The METAR
-   parser requires [20]LuaSocket. On Debian/Ubuntu systems you can install
+   parser requires [22]LuaSocket. On Debian/Ubuntu systems you can install
    the package liblua5.1-socket2 in order to get LuaSocket installed.
 
    Weather widget can also use GWeather XML location datafile to configure
    weather report locations using city names instead of weather station
    code. See the configuring section below for more information. If using
-   this feature, also [21]LuaExpat needs to be installed. On Debian/Ubuntu
+   this feature, also [23]LuaExpat needs to be installed. On Debian/Ubuntu
    systems you can install the packages libgweather-common and
    liblua5.1-expat0 in order to get GWeather XML location datafile and
    LuaExpat installed. Using GWeather support is highly recommended.
 
-   Calendar widget requires [22]calendar2.lua. The module is included in
+   Calendar widget requires [24]calendar2.lua. The module is included in
    this distribution. See the install section below for more information.
 
                                   Downloading
 
    Delightful can be downloaded by cloning the public Git repository at
    git://scm.solitudo.net/delightful.git. Gitweb interface is available at
-   [23]http://scm.solitudo.net/gitweb/public/delightful.git.
+   [25]http://scm.solitudo.net/gitweb/public/delightful.git.
 
                                   Installation
 
@@ -285,7 +288,7 @@ Network widget
    displays status for unwanted network devices, the following
    configuration option is handy.
      * excluded_devices
-          + A table of [24]Lua patterns that match network devices that
+          + A table of [26]Lua patterns that match network devices that
             are not to be monitored. For instance, if you don't want to
             see the idle interface eth1, you could use the pattern ^eth1$.
 
@@ -356,12 +359,12 @@ Configuration options common to all widgets
 
                                     Themeing
 
-   Delightful widgets can use various aspects of the current [25]Beautiful
+   Delightful widgets can use various aspects of the current [27]Beautiful
    theme, though Delightful widgets should work with any unmodified theme.
    However, when using unmodified themes, be aware of the default icon
    lookup related performance notes below.
 
-   See the themes at [26]my Awesome themes page for examples of themes
+   See the themes at [28]my Awesome themes page for examples of themes
    with full Delightful support.
 
 Icons
@@ -372,7 +375,7 @@ Icons
    delightful/widgets.
 
    If an icon is not explicitly defined in the theme, default icon file
-   name is resolved using [27]awesome-freedesktop routines. Typically this
+   name is resolved using [29]awesome-freedesktop routines. Typically this
    results in dozens if not hundreds of file accesses per icon when trying
    to locate the icon file. If using many widgets and especially if using
    the Weather widget, which uses exactly one hundred icons, the automatic
@@ -411,7 +414,7 @@ Font
    IMAP and Weather widgets use the following font.
      * delightful_monospace_font
           + Font used when rendering text to popups. The setting should
-            refer to a [28]monospaced font. Fallback to monospace if
+            refer to a [30]monospaced font. Fallback to monospace if
             delightful_monospace_font not defined.
 
                                 Using in Awesome
@@ -561,15 +564,15 @@ s_end)
 
                             Copyright and licensing
 
-   Copyright: © 2010 Tuomas Jormola [29]tj@solitudo.net
-   [30]http://solitudo.net
+   Copyright: © 2010 Tuomas Jormola [31]tj@solitudo.net
+   [32]http://solitudo.net
 
-   Licensed under the terms of the [31]GNU General Public License Version
+   Licensed under the terms of the [33]GNU General Public License Version
    2.0. License terms are included in the file COPYING.
 
    calendar2.lua included in this distribution was created by Bernd
-   Zeimetz [32]bernd@bzed.de and modified by Marc Dequènes
-   [33]Duck@DuckCorp.org. calendar2.lua is released to public domain.
+   Zeimetz [34]bernd@bzed.de and modified by Marc Dequènes
+   [35]Duck@DuckCorp.org. calendar2.lua is released to public domain.
 
 References
 
@@ -577,32 +580,34 @@ References
    2. http://solitudo.net/software/awesome/delightful/
    3. https://awesome.naquadah.org/wiki/
    4. https://awesome.naquadah.org/wiki/Delightful
-   5. https://awesome.naquadah.org/wiki/Vicious
-   6. https://awesome.naquadah.org/wiki/Wicked
-   7. https://awesome.naquadah.org/wiki/Obvious
-   8. https://awesome.naquadah.org/wiki/Category:Widgets
-   9. https://awesome.naquadah.org/wiki/Naughty
-  10. https://awesome.naquadah.org/wiki/Vicious
-  11. https://awesome.naquadah.org/wiki/Vicious
-  12. http://git.sysphere.org/vicious/
-  13. https://github.com/terceiro/awesome-freedesktop
-  14. https://github.com/terceiro/awesome-freedesktop.git
-  15. https://github.com/dmj/misc/tree/master/lua/imap.lua
-  16. http://www.cs.princeton.edu/~diego/professional/luasocket/
-  17. http://www.inf.puc-rio.br/~brunoos/luasec/
-  18. http://solitudo.net/software/lua/weatherlib/
-  19. http://solitudo.net/software/lua/metar/
-  20. http://www.cs.princeton.edu/~diego/professional/luasocket/
-  21. http://www.keplerproject.org/luaexpat/
-  22. https://awesome.naquadah.org/wiki/Calendar_widget#Module_for_3.4
-  23. http://scm.solitudo.net/gitweb/public/delightful.git
-  24. http://www.lua.org/manual/5.1/manual.html#5.4.1
-  25. https://awesome.naquadah.org/wiki/Beautiful
-  26. http://solitudo.net/software/awesome/themes/
-  27. https://github.com/terceiro/awesome-freedesktop
-  28. http://en.wikipedia.org/wiki/Monospaced_font
-  29. mailto:tj@solitudo.net
-  30. http://solitudo.net/
-  31. http://www.gnu.org/licenses/gpl-2.0.html
-  32. mailto:bernd@bzed.de
-  33. mailto:Duck@DuckCorp.org
+   5. https://awesome.naquadah.org/wiki/Glossy_theme
+   6. https://awesome.naquadah.org/wiki/Darklooks_theme
+   7. https://awesome.naquadah.org/wiki/Vicious
+   8. https://awesome.naquadah.org/wiki/Wicked
+   9. https://awesome.naquadah.org/wiki/Obvious
+  10. https://awesome.naquadah.org/wiki/Category:Widgets
+  11. https://awesome.naquadah.org/wiki/Naughty
+  12. https://awesome.naquadah.org/wiki/Vicious
+  13. https://awesome.naquadah.org/wiki/Vicious
+  14. http://git.sysphere.org/vicious/
+  15. https://github.com/terceiro/awesome-freedesktop
+  16. https://github.com/terceiro/awesome-freedesktop.git
+  17. https://github.com/dmj/misc/tree/master/lua/imap.lua
+  18. http://www.cs.princeton.edu/~diego/professional/luasocket/
+  19. http://www.inf.puc-rio.br/~brunoos/luasec/
+  20. http://solitudo.net/software/lua/weatherlib/
+  21. http://solitudo.net/software/lua/metar/
+  22. http://www.cs.princeton.edu/~diego/professional/luasocket/
+  23. http://www.keplerproject.org/luaexpat/
+  24. https://awesome.naquadah.org/wiki/Calendar_widget#Module_for_3.4
+  25. http://scm.solitudo.net/gitweb/public/delightful.git
+  26. http://www.lua.org/manual/5.1/manual.html#5.4.1
+  27. https://awesome.naquadah.org/wiki/Beautiful
+  28. http://solitudo.net/software/awesome/themes/
+  29. https://github.com/terceiro/awesome-freedesktop
+  30. http://en.wikipedia.org/wiki/Monospaced_font
+  31. mailto:tj@solitudo.net
+  32. http://solitudo.net/
+  33. http://www.gnu.org/licenses/gpl-2.0.html
+  34. mailto:bernd@bzed.de
+  35. mailto:Duck@DuckCorp.org
