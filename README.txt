@@ -562,6 +562,13 @@ s_end)
    awesome-3.4.3-delightful-sample-configuration.diff in the Delightful
    distribution. The patch is against the stock Awesome 3.4.3 rc.lua.
 
+                                  Contributing
+
+   If you would like to contribute patches or new widgets, you can contact
+   the author. See contact information below.
+
+   PS. A Git tree to pull from would be a joy.
+
                             Copyright and licensing
 
    Copyright: © 2010 Tuomas Jormola [31]tj@solitudo.net
