@@ -571,7 +571,7 @@ s_end)
 
                             Copyright and licensing
 
-   Copyright: © 2010 Tuomas Jormola [31]tj@solitudo.net
+   Copyright: © 2011 Tuomas Jormola [31]tj@solitudo.net
    [32]http://solitudo.net
 
    Licensed under the terms of the [33]GNU General Public License Version
