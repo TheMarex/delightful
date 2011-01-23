@@ -526,7 +526,7 @@ PS. A Git tree to pull from would be a joy.
 
 # Copyright and licensing
 
-Copyright: © 2010 Tuomas Jormola <tj@solitudo.net> <http://solitudo.net>
+Copyright: © 2011 Tuomas Jormola <tj@solitudo.net> <http://solitudo.net>
 
 Licensed under the terms of the [GNU General Public License Version 2.0](http://www.gnu.org/licenses/gpl-2.0.html).
 License terms are included in the file `COPYING`.

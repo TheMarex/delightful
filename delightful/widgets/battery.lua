@@ -1,7 +1,7 @@
 -------------------------------------------------------------------------------
 --
 -- Battery widget for Awesome 3.4
--- Copyright (C) 2010 Tuomas Jormola <tj@solitudo.net>
+-- Copyright (C) 2011 Tuomas Jormola <tj@solitudo.net>
 --
 -- Licensed under the terms of GNU General Public License Version 2.0.
 --
