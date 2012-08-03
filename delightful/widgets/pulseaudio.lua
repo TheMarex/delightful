@@ -170,11 +170,12 @@ function update_data(force_update)
 		return
 	end
 	local sink_id = 0
+    local sink_num_ok 
 	-- iterate all lines in "pacmd list-sinks" output
 	pacmd_string:gsub('(.-)\n', function(line)
 			-- parse sink id
 			line:gsub('^[%s\*]+index:%s(%d)$', function(match)
-					local sink_num_ok = false
+					sink_num_ok = false
 					local sink_num = tonumber(match)
 					if pulseaudio_config.sink_nums then
 						for _, accepted_sink_num in pairs(pulseaudio_config.sink_nums) do
@@ -193,7 +194,7 @@ function update_data(force_update)
 			end)
 			-- parse mute status
 			line:gsub('^%s+muted:%s(.+)$', function(match)
-					if sink_id == 0 or not sink_data[sink_id].num then
+					if not sink_num_ok then
 						return
 					end
 					if match == 'yes' then
@@ -204,7 +205,7 @@ function update_data(force_update)
 			end)
 			-- parse volume
 			line:gsub('^%s+volume:%s+0:%s+(%d+)%%%s+1:%s+%d+%%$', function(match)
-					if sink_id == 0 or not sink_data[sink_id].num then
+					if not sink_num_ok then
 						return
 					end
 					sink_data[sink_id].volperc = tonumber(match)
@@ -212,7 +213,7 @@ function update_data(force_update)
 			end)
 			-- parse device name
 			line:gsub('^%s+alsa\.name%s+=%s+[\'"]([^\'"]+)[\'"]$', function(match)
-					if sink_id == 0 or not sink_data[sink_id].num then
+					if not sink_num_ok then
 						return
 					end
 					sink_data[sink_id].name = match
@@ -481,7 +482,7 @@ function pulseaudio_set_volume(sink_id, step)
 	end
 	local volnum_new = math.floor(((maxvol / 100) * volperc_new) + 0.5)
 	if volnum_new ~= sink_data[sink_id].volnum then
-		awful_util.spawn('pacmd set-sink-volume ' .. sink_id - 1 .. ' ' .. volnum_new, false)
+		awful_util.spawn('pacmd set-sink-volume ' .. sink_data[sink_id].num .. ' ' .. volnum_new, false)
 		sink_data[sink_id].volperc = volperc_new
 		sink_data[sink_id].volnum = volnum_new
 	end
@@ -503,7 +504,7 @@ function pulseaudio_mute(sink_id)
 	if not sink_data[sink_id] or fatal_error or sink_data[sink_id].error_string then
 		return
 	end
-	awful_util.spawn('pacmd set-sink-mute ' .. sink_id - 1 .. ' 1', false) 
+	awful_util.spawn('pacmd set-sink-mute ' .. sink_data[sink_id].num .. ' 1', false) 
 	sink_data[sink_id].muted = true
 end
 
@@ -511,7 +512,7 @@ function pulseaudio_unmute(sink_id)
 	if not sink_data[sink_id] or fatal_error or sink_data[sink_id].error_string then
 		return
 	end
-	awful_util.spawn('pacmd set-sink-mute ' .. sink_id - 1 .. ' 0', false) 
+	awful_util.spawn('pacmd set-sink-mute ' .. sink_data[sink_id].num .. ' 0', false) 
 	sink_data[sink_id].muted = false
 end
 
