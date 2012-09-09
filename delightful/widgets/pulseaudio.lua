@@ -170,7 +170,7 @@ function update_data(force_update)
 		return
 	end
 	local sink_id = 0
-    local sink_num_ok 
+	local sink_num_ok
 	-- iterate all lines in "pacmd list-sinks" output
 	pacmd_string:gsub('(.-)\n', function(line)
 			-- parse sink id
