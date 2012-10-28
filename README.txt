@@ -506,7 +506,6 @@ end
    Then at the end of wibox creation, delete the lines
      __________________________________________________________________
 
-mywibox[s] = awful.wibox({ position = "top", screen = s })
 -- Add widgets to the wibox - order matters
 mywibox[s].widgets = {
     {
