@@ -448,8 +448,7 @@ function load(self, config)
 	for imap_index, data in pairs(imap_data) do
 		local icon
 		if not imap_config[imap_index].no_icon and icon_files.read and icon_files.unread and icon_files.error then
-			icon = wibox.widget.imagebox()
-            icon:set_name('imap_' .. imap_index)
+			icon = wibox.widget.imagebox({ name = 'imap_' .. imap_index})
 		end
 
 		local popup_enter = function()

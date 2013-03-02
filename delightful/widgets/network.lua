@@ -223,8 +223,7 @@ function load(self, config)
 							awful_util.spawn(network_config.command, true)
 						end
 				end)
-				icon = wibox.widget.imagebox()
-                icon:set_name('net' .. device .. 'icon')
+				icon = wibox.widget.imagebox({name = 'net' .. device .. 'icon'})
 				icon:buttons(buttons)
 		    	icon:set_image(icon_file)
 				local tooltip = awful_tooltip({ objects = { icon } })
@@ -236,8 +235,7 @@ function load(self, config)
 			end
 		end
 
-	    local net_widget = wibox.widget.textbox()
-        net_widget:set_name('net' .. device .. 'widget')
+	    local net_widget = wibox.widget.textbox({ name = 'net' .. device .. 'widget'})
     	local widget_text = '↓'
 		local close_span = false
 		if color_download then
