@@ -59,7 +59,7 @@ local awful_tooltip     = require('awful.tooltip')
 local awful_util        = require('awful.util')
 local awful_widget      = require('awful.widget')
 local image             = require('image')
-local widget            = require('widget')
+local wibox             = require('wibox')
 
 local delightful_utils  = require('delightful.utils')
 local vicious           = require('vicious')
@@ -157,7 +157,8 @@ function load(self, config)
 					awful_util.spawn(battery_config.command, true)
 				end
 		end)
-		icon = widget({ type = 'imagebox', name = 'battery' })
+		icon = wibox.widget.imagebox()
+        icon:set_name('battery')
 		icon:buttons(buttons)
 		icon_tooltip = awful_tooltip({ objects = { icon } })
 	end
@@ -224,7 +225,7 @@ function vicious_formatter(widget, data)
 		end
 		if icon_file and (not prev_icon or prev_icon ~= icon_file) then
 			prev_icon = icon_file
-			icon.image = image(icon_file)
+			icon:set_image(image(icon_file))
 		end
 	end
 	if fatal_error then

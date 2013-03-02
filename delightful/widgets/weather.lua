@@ -130,7 +130,7 @@ local beautiful         = require('beautiful')
 local capi             = { mouse = mouse, screen = screen }
 local image            = require('image')
 local naughty          = require('naughty')
-local widget           = require('widget')
+local wibox            = require('wibox')
 
 local io               = { lines = io.lines }
 local math             = { floor = math.floor }
@@ -1123,7 +1123,7 @@ function update_icon(station_index)
 	if icon_file and
 			(not prev_icons[station_index] or prev_icons[station_index] ~= icon_file) then
 		prev_icons[station_index] = icon_file
-		icons[station_index].image = image(icon_file)
+		icons[station_index]:set_image(image(icon_file))
 	end
 end
 
@@ -1224,7 +1224,8 @@ function load(self, config)
 
 		local icon
 		if not weather_config[station_index].no_icon and icon_files.not_found and icon_files.error then
-			icon = widget({ type = 'imagebox', name = 'weather_' .. station_index })
+			icon = wibox.widget.imagebox()
+            icon:set_name('weather_' .. station_index)
 		end
 
 		local popup_enter = function()
@@ -1242,13 +1243,13 @@ function load(self, config)
 		end
 		local popup_leave = function() naughty.destroy(data.popup) end
 
-		local widget = widget({ type = 'textbox'})
+		local widget = wibox.widget.textbox()
 
-		widget:add_signal('mouse::enter', popup_enter)
-		widget:add_signal('mouse::leave', popup_leave)
+		widget:connect_signal('mouse::enter', popup_enter)
+		widget:connect_signal('mouse::leave', popup_leave)
 		if icon then
-			icon:add_signal('mouse::enter', popup_enter)
-			icon:add_signal('mouse::leave', popup_leave)
+			icon:connect_signal('mouse::enter', popup_enter)
+			icon:connect_signal('mouse::leave', popup_leave)
 		end
 	
 		if weather_config[station_index].command then

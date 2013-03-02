@@ -50,7 +50,7 @@ local awful_tooltip     = require('awful.tooltip')
 local awful_util        = require('awful.util')
 local awful_widget      = require('awful.widget')
 local image             = require('image')
-local widget            = require('widget')
+local wibox             = require('wibox')
 
 local delightful_utils  = require('delightful.utils')
 local vicious           = require('vicious')
@@ -144,9 +144,10 @@ function load(self, config)
 						awful_util.spawn(memory_config.command, true)
 					end
 			end)
-			icon = widget({ type = 'imagebox', name = 'memory' })
+			icon = wibox.widget.imagebox()
+            icon:set_name('memory')
 			icon:buttons(buttons)
-			icon.image = icon_data
+			icon:set_image(icon_data)
 			icon_tooltip = awful_tooltip({ objects = { icon } })
 		end
 	end

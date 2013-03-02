@@ -88,7 +88,7 @@ local awful_util        = require('awful.util')
 local beautiful         = require('beautiful')
 local image             = require('image')
 local naughty           = require('naughty')
-local widget            = require('widget')
+local wibox             = require('wibox')
 
 local delightful_utils  = require('delightful.utils')
 local vicious           = require('vicious')
@@ -310,7 +310,7 @@ function update_icon(imap_index)
 	if icon_file and
 			(not prev_icons[imap_index] or prev_icons[imap_index] ~= icon_file) then
 		prev_icons[imap_index] = icon_file
-		icons[imap_index].image = image(icon_file)
+		icons[imap_index]:set_image(image(icon_file))
 	end
 end
 
@@ -449,7 +449,8 @@ function load(self, config)
 	for imap_index, data in pairs(imap_data) do
 		local icon
 		if not imap_config[imap_index].no_icon and icon_files.read and icon_files.unread and icon_files.error then
-			icon = widget({ type = 'imagebox', name = 'imap_' .. imap_index })
+			icon = wibox.widget.imagebox()
+            icon:set_name('imap_' .. imap_index)
 		end
 
 		local popup_enter = function()
@@ -469,13 +470,13 @@ function load(self, config)
 		end
 		local popup_leave = function() naughty.destroy(data.popup) end
 
-		local widget = widget({ type = 'textbox'})
+		local widget = wibox.widget.textbox()
 
-		widget:add_signal('mouse::enter', popup_enter)
-		widget:add_signal('mouse::leave', popup_leave)
+		widget:connect_signal('mouse::enter', popup_enter)
+		widget:connect_signal('mouse::leave', popup_leave)
 		if icon then
-			icon:add_signal('mouse::enter', popup_enter)
-			icon:add_signal('mouse::leave', popup_leave)
+			icon:connect_signal('mouse::enter', popup_enter)
+			icon:connect_signal('mouse::leave', popup_leave)
 		end
 
 		if imap_config[imap_index].command then

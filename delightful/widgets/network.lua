@@ -77,7 +77,7 @@ local awful_button      = require('awful.button')
 local awful_tooltip     = require('awful.tooltip')
 local awful_util        = require('awful.util')
 local image             = require('image')
-local widget            = require('widget')
+local wibox             = require('wibox')
 
 local delightful_utils  = require('delightful.utils')
 local vicious           = require('vicious')
@@ -225,9 +225,10 @@ function load(self, config)
 							awful_util.spawn(network_config.command, true)
 						end
 				end)
-				icon = widget({ type = 'imagebox', name = 'net' .. device .. 'icon' })
+				icon = wibox.widget.imagebox()
+                icon:set_name('net' .. device .. 'icon')
 				icon:buttons(buttons)
-		    	icon.image = icon_data
+		    	icon:set_image(icon_data)
 				local tooltip = awful_tooltip({ objects = { icon } })
     			tooltip:set_text(' Download and upload speed \n of the network device ' .. device .. ' \n in kilobytes per second ')
 				if not icons then
@@ -237,7 +238,8 @@ function load(self, config)
 			end
 		end
 
-	    local net_widget = widget({ type = 'textbox', name = 'net' .. device .. 'widget' })
+	    local net_widget = wibox.widget.textbox()
+        net_widget:set_name('net' .. device .. 'widget')
     	local widget_text = '↓'
 		local close_span = false
 		if color_download then
