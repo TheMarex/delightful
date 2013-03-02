@@ -350,14 +350,14 @@ function load(self, config)
 							end
 					end)
 			)
-			icons[sink_id] = wibox.widget.imagebox({name = 'pulseaudio_'})
+			icons[sink_id] = wibox.widget.imagebox()
 			icons[sink_id]:buttons(buttons)
 			tooltips[sink_id] = awful_tooltip( { objects = { icons[sink_id] } })
 			update_icon(sink_id)
 			update_tooltip(sink_id)
 		end
 
-		local widget = awful_widget.progressbar({ layout = awful_widget.layout.horizontal.rightleft })
+		local widget = awful_widget.progressbar()
 		if bg_color then
 			widget:set_border_color(bg_color)
 			widget:set_background_color(bg_color)
@@ -366,7 +366,7 @@ function load(self, config)
 			widget:set_color(fg_color)
 		end
 		if fg_color and fg_center_color and fg_end_color then
-			widget:set_gradient_colors({ fg_color, fg_center_color, fg_end_color })
+            widget:set_color({ type = "linear", from = { 0, 0 }, to = { 19, 0 }, stops = { { 0, fg_color }, { 0.5, fg_center_color }, { 1, fg_end_color} }})
 		end
 		widget:set_width(8)
 		widget:set_height(19)

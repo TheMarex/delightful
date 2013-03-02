@@ -155,7 +155,7 @@ function load(self, config)
 		cpu_widget:set_color(fg_color)
 	end
 	if fg_color and fg_center_color and fg_end_color then
-		cpu_widget:set_gradient_colors({ fg_color, fg_center_color, fg_end_color })
+        cpu_widget:set_color({ type = "linear", from = { 0, 0 }, to = { 19, 0 }, stops = { { 0, fg_color }, { 0.5, fg_center_color }, { 1, fg_end_color} }})
 	end
 	cpu_widget:set_width(cpu_config.graph_width)
 	cpu_widget:set_height(19)

@@ -155,7 +155,7 @@ function load(self, config)
 	local fg_center_color = delightful_utils.find_theme_color({ 'fg_center_widget', 'fg_widget', 'fg_normal' })
 	local fg_end_color    = delightful_utils.find_theme_color({ 'fg_end_widget', 'fg_widget', 'fg_normal'    })
 
-	local memory_widget = awful_widget.progressbar({ layout = awful_widget.layout.horizontal.rightleft })
+	local memory_widget = awful_widget.progressbar()
 	if bg_color then
 		memory_widget:set_background_color(bg_color)
 		memory_widget:set_border_color(bg_color)
@@ -164,7 +164,7 @@ function load(self, config)
 		memory_widget:set_color(fg_color)
 	end
 	if fg_color and fg_center_color and fg_end_color then
-		memory_widget:set_gradient_colors({ fg_color, fg_center_color, fg_end_color })
+        memory_widget:set_color({ type = "linear", from = { 0, 0 }, to = { 19, 0 }, stops = { { 0, fg_color }, { 0.5, fg_center_color }, { 1, fg_end_color} }})
 	end
 	memory_widget:set_width(8)
 	memory_widget:set_height(19)
@@ -175,7 +175,7 @@ function load(self, config)
 
 	if has_swap then
 		table.insert(icons, '')
-		local swap_widget = awful_widget.progressbar({ layout = awful_widget.layout.horizontal.rightleft })
+		local swap_widget = awful_widget.progressbar()
 		if bg_color then
 			swap_widget:set_background_color(bg_color)
 			swap_widget:set_border_color(bg_color)
@@ -184,7 +184,7 @@ function load(self, config)
 			swap_widget:set_color(fg_color)
 		end
 		if fg_color and fg_center_color and fg_end_color then
-			swap_widget:set_gradient_colors({ fg_color, fg_center_color, fg_end_color })
+            swap_widget:set_color({ type = "linear", from = { 0, 0 }, to = { 19, 0 }, stops = { { 0, fg_color }, { 0.5, fg_center_color }, { 1, fg_end_color} }})
 		end
 		swap_widget:set_width(8)
 		swap_widget:set_height(19)
