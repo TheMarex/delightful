@@ -51,7 +51,6 @@ local awful_button      = require('awful.button')
 local awful_tooltip     = require('awful.tooltip')
 local awful_util        = require('awful.util')
 local awful_widget      = require('awful.widget')
-local image             = require('image')
 local wibox             = require('wibox')
 
 local delightful_utils  = require('delightful.utils')
@@ -129,7 +128,6 @@ function load(self, config)
 	end
 	local icon_file = icon_files and icon_files.cpu
 	if icon_file then
-		local icon_data = image(icon_file);
 		if icon_data then
 			local buttons = awful_button({}, 1, function()
 					if not fatal_error and cpu_config.command then
@@ -139,7 +137,7 @@ function load(self, config)
 			icon = wibox.widget.imagebox()
             icon:set_name('cpu')
 			icon:buttons(buttons)
-			icon:set_image(icon_data)
+			icon:set_image(icon_file)
 			icon_tooltip = awful_tooltip({ objects = { icon } })
 		end
 	end

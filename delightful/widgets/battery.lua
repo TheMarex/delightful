@@ -58,7 +58,6 @@ local awful_button      = require('awful.button')
 local awful_tooltip     = require('awful.tooltip')
 local awful_util        = require('awful.util')
 local awful_widget      = require('awful.widget')
-local image             = require('image')
 local wibox             = require('wibox')
 
 local delightful_utils  = require('delightful.utils')
@@ -225,7 +224,7 @@ function vicious_formatter(widget, data)
 		end
 		if icon_file and (not prev_icon or prev_icon ~= icon_file) then
 			prev_icon = icon_file
-			icon:set_image(image(icon_file))
+			icon:set_image(icon_file)
 		end
 	end
 	if fatal_error then

@@ -86,7 +86,6 @@
 local awful_button      = require('awful.button')
 local awful_util        = require('awful.util')
 local beautiful         = require('beautiful')
-local image             = require('image')
 local naughty           = require('naughty')
 local wibox             = require('wibox')
 
@@ -310,7 +309,7 @@ function update_icon(imap_index)
 	if icon_file and
 			(not prev_icons[imap_index] or prev_icons[imap_index] ~= icon_file) then
 		prev_icons[imap_index] = icon_file
-		icons[imap_index]:set_image(image(icon_file))
+		icons[imap_index]:set_image(icon_file)
 	end
 end
 

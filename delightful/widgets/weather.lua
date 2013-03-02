@@ -128,7 +128,6 @@ local awful_button     = require('awful.button')
 local awful_util       = require('awful.util')
 local beautiful         = require('beautiful')
 local capi             = { mouse = mouse, screen = screen }
-local image            = require('image')
 local naughty          = require('naughty')
 local wibox            = require('wibox')
 
@@ -1123,7 +1122,7 @@ function update_icon(station_index)
 	if icon_file and
 			(not prev_icons[station_index] or prev_icons[station_index] ~= icon_file) then
 		prev_icons[station_index] = icon_file
-		icons[station_index]:set_image(image(icon_file))
+		icons[station_index]:set_image(icon_file)
 	end
 end
 

@@ -72,7 +72,6 @@ local awful_button       = require('awful.button')
 local awful_tooltip      = require('awful.tooltip')
 local awful_util         = require('awful.util')
 local awful_widget       = require('awful.widget')
-local image              = require('image')
 local wibox              = require('wibox')
 
 local delightful_utils   = require('delightful.utils')
@@ -255,7 +254,7 @@ function update_icon(sink_id)
 	end
 	if icon_file and (not prev_icons[sink_id] or prev_icons[sink_id] ~= icon_file) then
 		prev_icons[sink_id]  = icon_file
-		icons[sink_id].image = image(icon_file)
+		icons[sink_id]:set_image(icon_file)
 	end
 end
 
