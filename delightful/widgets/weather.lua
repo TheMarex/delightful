@@ -1223,7 +1223,7 @@ function load(self, config)
 
 		local icon
 		if not weather_config[station_index].no_icon and icon_files.not_found and icon_files.error then
-			icon = wibox.widget.imagebox({ name = 'weather_' .. station_index})
+			icon = wibox.widget.imagebox()
 		end
 
 		local popup_enter = function()

@@ -142,7 +142,7 @@ function load(self, config)
 						awful_util.spawn(memory_config.command, true)
 					end
 			end)
-			icon = wibox.widget.imagebox({ name = 'memory' })
+			icon = wibox.widget.imagebox()
 			icon:buttons(buttons)
 			icon:set_image(icon_file)
 			icon_tooltip = awful_tooltip({ objects = { icon } })

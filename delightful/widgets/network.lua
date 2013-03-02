@@ -223,7 +223,7 @@ function load(self, config)
 							awful_util.spawn(network_config.command, true)
 						end
 				end)
-				icon = wibox.widget.imagebox({name = 'net' .. device .. 'icon'})
+				icon = wibox.widget.imagebox()
 				icon:buttons(buttons)
 		    	icon:set_image(icon_file)
 				local tooltip = awful_tooltip({ objects = { icon } })

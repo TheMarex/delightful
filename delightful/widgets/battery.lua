@@ -156,7 +156,7 @@ function load(self, config)
 					awful_util.spawn(battery_config.command, true)
 				end
 		end)
-		icon = wibox.widget.imagebox({ name = 'battery' })
+		icon = wibox.widget.imagebox()
 		icon:buttons(buttons)
 		icon_tooltip = awful_tooltip({ objects = { icon } })
 	end
