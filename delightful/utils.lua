@@ -153,7 +153,7 @@ function config_number(value)
 	if type(value) ~= 'number' then
 		return false, 'must be a number'
 	end
-	if not tostring(value):find('^-?%d+\.?%d*$') then
+	if not tostring(value):find('^-?%d+.?%d*$') then
 		return false, 'must be a number'
 	end
 	return true

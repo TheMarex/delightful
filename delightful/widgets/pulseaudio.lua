@@ -173,7 +173,7 @@ function update_data(force_update)
 	-- iterate all lines in "pacmd list-sinks" output
 	pacmd_string:gsub('(.-)\n', function(line)
 			-- parse sink id
-			line:gsub('^[%s\*]+index:%s(%d)$', function(match)
+			line:gsub('^[%s*]+index:%s(%d)$', function(match)
 					sink_num_ok = false
 					local sink_num = tonumber(match)
 					if pulseaudio_config.sink_nums then
@@ -211,7 +211,7 @@ function update_data(force_update)
 					sink_data[sink_id].volnum  = math.floor(((maxvol / 100) * sink_data[sink_id].volperc) + 0.5)
 			end)
 			-- parse device name
-			line:gsub('^%s+alsa\.name%s+=%s+[\'"]([^\'"]+)[\'"]$', function(match)
+			line:gsub('^%s+alsa.name%s+=%s+[\'"]([^\'"]+)[\'"]$', function(match)
 					if not sink_num_ok then
 						return
 					end
@@ -437,7 +437,7 @@ function update_number_of_sinks()
 		number_of_sinks = #pulseaudio_config.sink_nums
 	elseif pacmd_string then
 		pacmd_string:gsub('(.-)\n', function(line)
-				line:gsub('^[%s\*]+index:%s%d$', function(match)
+				line:gsub('^[%s*]+index:%s%d$', function(match)
 						number_of_sinks = number_of_sinks + 1
 				end)
 		end)
