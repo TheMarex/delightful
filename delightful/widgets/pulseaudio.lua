@@ -203,7 +203,7 @@ function update_data(force_update)
 					end
 			end)
 			-- parse volume
-			line:gsub('^%s+volume:%s+0:%s+(%d+)%%.*$', function(match)
+			line:gsub('^%s+volume:%s+front%-left:%s+%d+%s+/%s+(%d+)%%.*$', function(match)
 					if not sink_num_ok then
 						return
 					end
