@@ -366,7 +366,7 @@ function load(self, config)
 			widget:set_color(fg_color)
 		end
 		if fg_color and fg_center_color and fg_end_color then
-            widget:set_color({ type = "linear", from = { 0, 0 }, to = { 19, 0 }, stops = { { 0, fg_color }, { 0.5, fg_center_color }, { 1, fg_end_color} }})
+            widget:set_color({ type = "linear", from = { 0, 0 }, to = { 0, 19 }, stops = { { 0, fg_color }, { 0.5, fg_center_color }, { 1, fg_end_color} }})
 		end
 		widget:set_width(8)
 		widget:set_height(19)
