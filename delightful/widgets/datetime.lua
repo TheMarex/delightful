@@ -34,7 +34,7 @@ local string       = { format = string.format }
 module('delightful.widgets.datetime')
 
 function load()
-	local widget = awful_widget.textclock({ align = 'right' })
+	local widget = awful_widget.textclock()
 	local calendar_format = '%s'
 	if beautiful.fg_focus and beautiful.bg_focus then
 		calendar_format = string.format('<span color="%s" background="%s">%%s</span>',
